@@ -34,6 +34,7 @@
       wrapper.style.visibility = 'hidden';
       wrapper.style.minHeight = '200px';
       wrapper.style.position = 'relative';
+      wrapper.style.overflow = 'hidden';
     } catch (e) {}
   }
 
@@ -62,7 +63,7 @@
     var start = Date.now();
     function check() {
       try {
-        if (isZILoaded()) { setTimeout(function () { revealWrapper(wrapper); }, 150); return; }
+        if (isZILoaded()) { setTimeout(function () { revealWrapper(wrapper); }, 500); return; }
         if (Date.now() - start >= TIMEOUT_MS) { revealWrapper(wrapper); return; }
         setTimeout(check, POLL_INTERVAL_MS);
       } catch (e) { revealWrapper(wrapper); }
